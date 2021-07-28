@@ -1,4 +1,5 @@
 const path = require('path');
+const loader =require('sass-loader');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports={
@@ -8,7 +9,7 @@ module.exports={
     },
     devServer:{
         port:3010,
-        watchContentBase:true,
+        historyApiFallback: true
     },
     module:{
         rules:[
