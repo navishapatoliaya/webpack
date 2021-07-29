@@ -2,6 +2,7 @@ import { history } from "../helpers";
 import { userConstants } from "../constants";
 import { userService } from "../services";
 import { alertActions } from "./alertactions";
+
 export const userActions = {
     login,
     logout,

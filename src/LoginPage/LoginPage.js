@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { connect } from 'react-redux';
-// import { userActions } from '../_actions';
+import { connect } from 'react-redux';
+import { userActions } from '../actions';
+
 class LoginPage extends React.Component {
     constructor(props) {
         super(props);
-        // this.props.logout();
+        this.props.logout();
         this.state = {
             username: '',
             password: '',
@@ -59,14 +60,14 @@ class LoginPage extends React.Component {
         );
     }
 }
-// function mapState(state) {
-//     const { loggingIn } = state.authentication;
-//     return { loggingIn };
-// }
-// const actionCreators = {
-//     login: userActions.login,
-//     logout: userActions.logout
-// };
-// const connectedLoginPage = connect(mapState, actionCreators)(LoginPage);
-// export { connectedLoginPage as LoginPage };
-export default LoginPage;
+function mapState(state) {
+    const { loggingIn } = state.authentication;
+    return { loggingIn };
+}
+const actionCreators = {
+    login: userActions.login,
+    logout: userActions.logout
+};
+const connectedLoginPage = connect(mapState, actionCreators)(LoginPage);
+export { connectedLoginPage as LoginPage };
+// export default LoginPage;
