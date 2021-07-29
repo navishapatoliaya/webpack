@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 
-// import { userActions } from '../_actions';
+import { userActions } from '../actions';
 
 class RegisterPage extends Component{
     constructor(props) {
@@ -91,15 +91,15 @@ class RegisterPage extends Component{
     }
 }
 
-// function mapState(state) {
-//     const { registering } = state.registration;
-//     return { registering };
-// }
+function mapState(state) {
+    const { registering } = state.registration;
+    return { registering };
+}
 
-// const actionCreators = {
-//     register: userActions.register
-// }
+const actionCreators = {
+    register: userActions.register
+}
 
-// const connectedRegisterPage = connect(mapState, actionCreators)(RegisterPage);
-// export { connectedRegisterPage as RegisterPage };
-export default RegisterPage ;
+const connectedRegisterPage = connect(mapState, actionCreators)(RegisterPage);
+export { connectedRegisterPage as RegisterPage };
+// export default RegisterPage ;

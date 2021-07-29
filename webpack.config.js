@@ -3,6 +3,7 @@ const loader =require('sass-loader');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports={
+    mode:'devlopement',
     output:{
         path:path.join(__dirname,'./dist'),
         filename:'index.bundle.js'
@@ -31,4 +32,10 @@ module.exports={
         ]
     },
     plugins:[new MiniCssExtractPlugin()],
+    externals: {
+        // global app config object
+        config: JSON.stringify({
+            apiUrl: 'http://localhost:3010'
+        })
+    }
 };
