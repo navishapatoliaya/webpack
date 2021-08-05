@@ -9,7 +9,7 @@ module.exports={
         filename:'index.bundle.js'
     },
     devServer:{
-        port:3010,
+         port:8080,
         historyApiFallback: true
     },
     module:{
@@ -35,7 +35,7 @@ module.exports={
     externals: {
         // global app config object
         config: JSON.stringify({
-            apiUrl: 'http://localhost:3010'
+            apiUrl: 'http://localhost:8080'
         })
     }
 };
