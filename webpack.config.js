@@ -6,6 +6,7 @@ module.exports={
     mode:'devlopement',
     output:{
         path:path.join(__dirname,'./dist'),
+        inline : false,
         filename:'index.bundle.js'
     },
     devServer:{
